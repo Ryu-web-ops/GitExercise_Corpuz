@@ -17,9 +17,13 @@ class GitCommands {
 
     // Command: git status
     public String status() {
-        /**
-         * Create Logic here and run unit testing.
-         */
+       StringBuilder ryu = new StringBuilder();
+       int tisting = this.working_directory.new_changes.size();
+       ryu.append("you have").append(tisting).append("Change/s. \n");
+       for(String file : this.working_directory.new_changes) {
+    	   ryu.append(file).append("\n");
+       } 
+       return ryu.toString();
     }
 
     // Command: git add <filename/file directory/wildcard>
